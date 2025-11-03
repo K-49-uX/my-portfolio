@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bright Future Foundations</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#111; background:#f5f8fa;scroll-behavior:smooth;}
+
+    .bg-wrap{position:fixed;inset:0;z-index:-1;overflow:hidden}
+    .bg-video{min-width:100%;min-height:100%;object-fit:cover;filter:brightness(0.5);}
+
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:rgba(0,0,0,0.6);color:#fff;position:sticky;top:0;z-index:10;backdrop-filter:blur(6px)}
+    .logo{font-weight:700;font-size:22px;letter-spacing:0.5px}
+    nav ul{list-style:none;display:flex;gap:18px}
+    nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;transition:background .18s}
+    nav a:hover{background:rgba(255,255,255,0.1)}
+
+    /* Hero Section */
+    .hero{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:48px 20px;text-align:center;animation:fadeZoom 1.2s ease-out forwards;}
+    @keyframes fadeZoom{0%{opacity:0;transform:scale(0.9)}100%{opacity:1;transform:scale(1)}}
+
+    .hero-content{max-width:900px;color:#fff;padding:28px;background:rgba(0,0,0,0.45);border-radius:14px;backdrop-filter:blur(6px)}
+    .hero h1{font-size:clamp(30px,6vw,54px);margin-bottom:14px}
+    .hero p{font-size:18px;margin-bottom:20px;opacity:0.95}
+    .hero a{display:inline-block;padding:12px 22px;border-radius:10px;background:#fff;color:#111;text-decoration:none;font-weight:600;transition:transform .3s}
+    .hero a:hover{transform:scale(1.05)}
+
+    section{padding:72px 20px;max-width:1100px;margin:auto}
+    section h2{font-size:28px;margin-bottom:14px;color:#0b2540;text-align:center;position:relative}
+    section h2::after{content:'';display:block;width:60px;height:4px;background:#0b2540;margin:10px auto;border-radius:4px}
+    section p{text-align:center;max-width:850px;margin:0 auto 30px;line-height:1.7}
+
+    /* Programs Animation */
+    .programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
+    .program-card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 20px rgba(11,37,64,0.06);text-align:center;opacity:0;transform:translateY(40px);animation:slideUp 1s ease forwards;}
+    .program-card:nth-child(1){animation-delay:.2s}
+    .program-card:nth-child(2){animation-delay:.4s}
+    .program-card:nth-child(3){animation-delay:.6s}
+    .program-card:nth-child(4){animation-delay:.8s}
+
+    @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+
+    /* Team Section */
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:30px}
+    .team-member{background:#fff;padding:18px;border-radius:10px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,0.05);transition:transform .35s,box-shadow .35s,opacity .8s;opacity:0;transform:translateY(30px);animation:fadeInTeam 1.2s forwards;}
+    .team-member:nth-child(1){animation-delay:.2s}
+    .team-member:nth-child(2){animation-delay:.4s}
+    .team-member:nth-child(3){animation-delay:.6s}
+    .team-member:nth-child(4){animation-delay:.8s}
+
+    @keyframes fadeInTeam{to{opacity:1;transform:translateY(0)}}
+
+    .team-member:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 12px 24px rgba(0,0,0,0.15)}
+    .team-member img{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-bottom:12px;transition:transform .3s}
+    .team-member:hover img{transform:scale(1.05)}
+
+    form{display:grid;gap:12px;max-width:700px;margin:auto}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #d7e0ea}
+    button{padding:12px;border-radius:8px;border:0;background:#0b2540;color:#fff;font-weight:600;cursor:pointer;transition:background .3s,transform .3s}
+    button:hover{background:#103a6f;transform:scale(1.03)}
+
+    footer{text-align:center;padding:24px;background:#0b2540;color:#fff;margin-top:60px}
+
+    @media (max-width:600px){nav ul{display:none}}
+  </style>
+</head>
+<body>
+  <div class="bg-wrap" aria-hidden="true">
+    <video autoplay muted loop class="bg-video">
+      <source src="bright-future.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="page-container">
+    <nav>
+      <div class="logo">Bright Future Foundation</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Building a Brighter Tomorrow Together</h1>
+        <p>Bright Future Foundation is dedicated to empowering individuals, nurturing education, and creating opportunities that build a stronger, more united community.</p>
+        <a href="#programs">Discover Our Work</a>
+      </div>
+    </section>
+
+    <section id="programs">
+      <h2>Our Core Programs</h2>
+      <p>We believe in real change through practical programs that uplift and inspire our people.</p>
+      <div class="programs-grid">
+        <div class="program-card">
+          <h3>Education Support</h3>
+          <p>Providing scholarships, mentorship, and learning materials to help students achieve their dreams.</p>
+        </div>
+        <div class="program-card">
+          <h3>Community Development</h3>
+          <p>Improving living conditions and building resources for sustainable community growth.</p>
+        </div>
+        <div class="program-card">
+          <h3>Women & Youth Empowerment</h3>
+          <p>Encouraging leadership, entrepreneurship, and skill-building among women and youth.</p>
+        </div>
+        <div class="program-card">
+          <h3>Health & Wellbeing</h3>
+          <p>Organizing health awareness campaigns, free check-ups, and wellness initiatives.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Bright Future Foundation</h2>
+      <p>Founded on the belief that every person deserves a chance to thrive, Bright Future Foundation focuses on community service, education, and empowerment. We work with local leaders and volunteers to create meaningful programs that promote compassion, equality, and lasting development.</p>
+    </section>
+
+    <section id="team">
+      <h2>Our Dedicated Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="sister aisha.jpg " alt="Founder">
+          <h3>farhiyo ibrahim</h3>
+          <p>Founder & Director</p>
+        </div>
+        <div class="team-member">
+          <img src="MIIRA.jpg" alt="Assistant Founder">
+          <h3>Samiira Mohamett</h3>
+          <p>Assistant Founder</p>
+        </div>
+        <div class="team-member">
+          <img src="manager.jpg" alt="Program Manager">
+          <h3>Qadijo mohamed</h3>
+          <p>Program Manager</p>
+        </div>
+        <div class="team-member">
+          <img src="coordinator.jpg" alt="Community Coordinator">
+          <h3> Fatma Abdullahi</h3>
+          <p>Community Coordinator</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="donate">
+      <h2>Donate or Volunteer</h2>
+      <p>Your support makes a difference! Join us in empowering communities and shaping brighter futures.</p>
+      <div style="text-align:center; margin-top:20px;">
+        <a href="#" style="display:inline-block;padding:12px 24px;background:#0b2540;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:transform .3s;">Donate Now</a>
+        <a href="#contact" style="display:inline-block;padding:12px 24px;background:#fff;color:#0b2540;border-radius:8px;text-decoration:none;font-weight:600;margin-left:10px;border:1px solid #0b2540;transition:transform .3s;">Become a Volunteer</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to join our mission, volunteer, or support our initiatives.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Bright Future Foundation | Empowering Communities with Hope</p>
+    </footer>
+  </div>
+</body>
+</html>
